@@ -8,7 +8,7 @@ const ingredients = [
   'Condiments',
 ];
 
-const listIng = document.createElement("#ingredients");
+const listIng = document.querySelector("#ingredients");
 
 const itemIng = ingredients.map((ingredient) => {
   const item = document.createElement("li");
@@ -18,3 +18,5 @@ const itemIng = ingredients.map((ingredient) => {
 });
 
 listIng.append(...itemsIng);
+
+
