@@ -7,11 +7,12 @@
 // <span id="text">Abracadabra!</span>
 
 
-const btn = document.getElementById("font-size-control");
+const fontSizeControl = document.getElementById("font-size-control");
 const textChange = document.getElementById("text");
 
-function fontSizeControl(event) {
-  textChange.style.fontSize = event.currentTarget.value + "px";
-}
+fontSizeControl.addEventListener("input", () => {
+  textChange.style.fontSize = fontSizeControl.value + "px";
+});
 
-btn.addEventListener("input", fontSizeControl);
+text.style.fontSize = fontSizeControl.value + "px";
+

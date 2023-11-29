@@ -10,23 +10,21 @@
 // методом reset.
 
 
-const form = document.getElementById(".login-form");
+const form = document.querySelector(".login-form");
 
-form.addEvenListener("submit", handleSubmit);
+form.addEventListener("submit", handleFormSubmit);
 
-function handleSubmit(event) {
-    event.preventDefault();
-    const { email, password } = event.currentTarget.elements;
+function handleFormSubmit(event) {
+  event.preventDefault();
+const {
+    elements: { email, password },
+  } = event.currentTarget;
 
-if (!email.value.trim() || !password.value.trim()) {
-  return alert("Please fill in all the fields!");
-} else {
-  const formData = {
-    email: email.value,
-    password: password.value,
-  };
-  console.log(formData);
+  if (email.value === "" || password.value === "") {
+    return alert("Please fill in all fields");
+  }
+
+  const result = { email: email.value, password: password.value };
+  console.log(result);
   event.currentTarget.reset();
-}
-
 }
